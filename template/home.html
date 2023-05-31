@@ -1,0 +1,151 @@
+{% extends 'headerPage.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Scanner Prediction - Your Trusted Diagnostic Tool</title>
+    <style>
+        body {
+            background-color: #e6eaed;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 32px;
+            color: #333333;
+            margin-top: 50px;
+        }
+        
+        p {
+            font-size: 18px;
+            color: #666666;
+            margin-bottom: 20px;
+        }
+        
+        .button-container {
+            margin-top: 30px;
+        }
+        
+        .upload-button {
+            background-color: #308372;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .upload-button:hover {
+            background-color: #45a049;
+        }
+        
+        .use-case-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .use-case-container2 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        
+        .use-case {
+            width: 30%;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .use-case:hover {
+            transform: scale(1.1);
+        }
+        
+        .use-case-title {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        .help-container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px; /* Add margin-bottom to create space after the container */
+        }
+        .use-case-description {
+            font-size: 18px;
+            color: #666666;
+        }
+        .use-case-price {
+            font-size: 16px;
+            color: #888888;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>Welcome to Medical Scanner Prediction!</b></h1>
+    <h2>Your Trusted Diagnostic Tool</h2>
+    <h3>Upload your medical scans and predict various conditions instantly.</h3>
+    
+    <div class="use-case-container">
+        <div class="use-case">
+            <h3 class="use-case-title">Brain Scan</h3>
+            <p class="use-case-description">Upload your brain scans for accurate diagnosis and detection of neurological conditions.</p>
+            <p class="use-case-price">Price: 1 credit</p>
+            <button class="upload-button" onclick="window.location.href='uploadBrain'">Upload Brain Scan</button>
+        </div>
+        
+        <div class="use-case">
+            <h3 class="use-case-title">Lung Scan</h3>
+            <p class="use-case-description">Analyze lung scans to identify potential respiratory diseases and conditions.</p>
+            <p class="use-case-price">Price: 1.3 credits</p>
+            <button class="upload-button" onclick="window.location.href='uploadLung'">Upload Lung Scan</button>
+        </div>
+        
+        <div class="use-case">
+            <h3 class="use-case-title">Eye Scan</h3>
+            <p class="use-case-description">Submit eye scans for precise evaluation of ocular health and identification of eye-related issues.</p>
+            <p class="use-case-price">Price: 1 credit</p>
+            <button class="upload-button" onclick="window.location.href='uploadEye'">Upload Eye Scan</button>
+        </div>
+    </div>
+    
+    <div class="use-case-container2">
+        <div class="use-case">
+            <h3 class="use-case-title">Bone Fracture</h3>
+            <p class="use-case-description">Submit bone scans for precise evaluation of bone fractures and identification of bone-related issues.</p>
+            <p class="use-case-price">Price: 1.5 credits</p>
+            <button class="upload-button" onclick="window.location.href='uploadBone'">Upload Bone Scan</button>
+        </div>
+        
+        <div class="use-case">
+            <h3 class="use-case-title">Knee Osteoarthritis</h3>
+            <p class="use-case-description">Submit knee scans for precise evaluation of knee osteoarthritis and identification of knee-related issues.</p>
+            <p class="use-case-price">Price: 1.2 credits</p>
+            <button class="upload-button" onclick="window.location.href='uploadKnee'">Upload Knee Scan</button>
+        </div>
+    </div>
+    
+    <div class="help-container">
+        <p class="help-text">If you're not sure which model to use, we're here to help! Simply upload your scan, and we'll recommend the appropriate model for diagnosis.</p>
+        <button class="upload-button" onclick="window.location.href='modelRec'">Get Model Recommendation</button>
+    </div>
+    
+</body>
+</html>
+
+{% endblock %}

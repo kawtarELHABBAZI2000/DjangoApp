@@ -1,0 +1,36 @@
+{% extends 'headerPage.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.css">
+
+<style>
+    body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2 class="text-center">Upload Your Medical Scanner of Eye Here</h2>
+            <br>
+
+            <form method="post" enctype="multipart/form-data" action="predictImageEye" class="dropzone" id="imageUploadForm">
+                {% csrf_token %}
+                <p style="font-size: 18px;">Please ensure that your scan image file is in a supported format <b>(e.g., JPEG, PNG)</b> and accurately represents the medical scan you wish to analyze.</p>
+                <p style="font-size: 18px;">Once uploaded, our advanced models will process the scan and provide you with the prediction results.</p>
+                <div class="form-group">
+                    <label for="fileInput" style="font-size: 18px;">Choose your file:</label>
+                    <input id="fileInput" name="filePath" type="file" class="form-control" style="font-size: 16px;">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-lg btn-block" style="font-size: 18px;">Submit</button>
+          
+
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .login-section {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-section p {
+      margin-bottom: 20px;
+    }
+
+    .login-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #337ab7;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .login-button:hover {
+      background-color: #23527c;
+    }
+  </style>
+</head>
+<body>
+  {% if user.is_authenticated %}
+    <p>Current user: {{ user.email }}</p>
+    <form action="{% url 'oidc_logout' %}" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Logout">
+    </form>
+  {% else %}
+    <div class="login-section">
+      <p style="font-size: 24px;">To login using Keycloack, please click the button below:</p>
+      <a href="{% url 'oidc_authentication_init' %}" class="login-button">Login with Keycloak</a>
+    </div>
+  {% endif %}
+</body>
+</html>

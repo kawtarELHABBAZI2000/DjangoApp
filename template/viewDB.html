@@ -1,0 +1,17 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+<h2><b>All the detected images </b></h2>
+
+<br>
+
+
+{% for i in listOfImagesPath %}
+    <img src={{i}} style="width: 270px; height: 270px; display: inline-block; margin-right: 10px; margin-bottom: 10px;">
+{% endfor %}
+
+
+
+
+{% endblock %}

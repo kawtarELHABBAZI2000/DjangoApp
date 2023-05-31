@@ -1,0 +1,73 @@
+{% extends 'headerPage.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Recommendation</title>
+    <style>
+        body {
+            background-color: #e6eaed;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 32px;
+            color: #333333;
+            margin-top: 50px;
+        }
+        
+        p {
+            font-size: 18px;
+            color: #666666;
+            margin-bottom: 20px;
+        }
+        
+        .button-container {
+            margin-top: 30px;
+        }
+        
+        .upload-button {
+            background-color: #308372;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .upload-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>Model Recommendation</b></h1>
+    <p style="font-size: 22px;">If you're unsure about which model to use for your medical scan, we're here to assist you. By analyzing your uploaded scan, we can recommend the most suitable model for diagnosis. </p>
+        <p style="font-size: 22px;">  <b>  Please upload your scan using the button below:</p></b>
+        <form method="post" enctype="multipart/form-data" action="predictImageRec">
+            {% csrf_token %} <!-- This renders a hidden input field with a CSRF token for security -->
+           
+            <div class="form-group">
+                <input id="fileInput" name="filePath" type="file" class="form-control" style="font-size: 16px;width: 500px; margin-left:  300px;">
+            </div>
+            
+            <div class="button-container">
+                <button type="submit" class="upload-button" style="font-size: 18px;">Submit</button>
+                </div>
+        </form>
+    
+        </div>
+        </div>
+        </div>
+
+</body>
+</html>
+
+{% endblock %}

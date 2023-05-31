@@ -1,0 +1,32 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <br>
+                <h3 class="text-center">Based on the given medical scanner, <b>{{ predictedLabel }}</b>!</h3>
+                <br>
+                <div class="text-center">
+                    <img src="{{ filePathName }}" alt="imagename" class="result-image img-responsive" style="max-width: 400px;">
+                </div>
+
+                <div class="text-center">
+                    <form method="post" enctype="multipart/form-data" action="uploadBrain">
+                        {% csrf_token %}
+                        <h3>To Upload another Image Click Here!</h3>
+                        <button type="submit" class="btn btn-primary" style="background-color: #5047cd; color: #fff; border-radius: 10px; font-size: 24px; padding: 12px 30px; border: none; cursor: pointer; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); transition: background-color 0.3s ease;">Upload Brain Scan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .result-image {
+            margin: 0 auto;
+        }
+    </style>
+
+{% endblock %}

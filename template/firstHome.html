@@ -1,0 +1,216 @@
+{% extends 'firstHeaderPage.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Medical Scanner Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #ffffff; /* Set the text color to contrast with the background colors */
+            background-color: #e6eaed;
+        }
+        
+        #header {
+            padding: 4s0px;
+            margin-bottom: 100px;
+        }
+        
+        #header h1 {
+            font-size: 32px;
+            margin: 0;
+            color: #333333;
+        }
+        
+        #container {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            box-shadow: #000000;
+            background-color: #ffffff; /* Set the background color for the content container */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #container-top {
+            margin: 20px auto;
+            max-width: 1000px;
+            padding: 20px;
+            color: #333333;
+            font-family: fantasy;
+        }
+        #container-top h2 {
+            font-size: 50px;
+        }
+        
+        #container h2 {
+            font-size: 24px;
+            color: #333333;
+        }
+        
+        #container p {
+            font-size: 18px;
+            color: #666666;
+            line-height: 1.5;
+        }
+        
+        /* Adjust the positioning of the content container */
+        #container {
+            position: relative;
+            z-index: 1;
+            margin-top: 60px; /* Adjust the top margin to create more space below the header */
+        }
+
+        #additional-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        #additional-container h2 {
+            font-size: 24px;
+            color: #333333;
+        }
+        
+        #additional-container p {
+            font-size: 22px;
+            color: #666666;
+            line-height: 1.5;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #additional-container img {
+            max-width: 100%; /* Make the image responsive and fit within the container */
+            height: auto;
+            margin-left: 10px; /* Add some spacing between the image and the text */
+        }
+
+        .icon {
+            font-size: 50px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+            
+        .use-case-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .use-case-container2 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        
+        .use-case {
+            width: 30%;
+            padding: 20px;
+            background-color: #3e8487;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .use-case:hover {
+            transform: scale(1.1);
+        }
+        
+        .use-case-title {
+            font-size: 26px;
+            color: #fffbfb;
+            margin-bottom: 10px;
+        }
+        .help-container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px; /* Add margin-bottom to create space after the container */
+        }
+        .use-case-description {
+            font-size: 18px;
+            color: #ffffff;
+        }
+        .use-case-price {
+            font-size: 16px;
+            color: #fffdfd;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container-top">
+        <h2>Welcome to Medical Scanner Prediction</h2>
+    </div>
+    <div id="additional-container">
+
+        <img src="https://images.pexels.com/photos/9951400/pexels-photo-9951400.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Image description" style="height: 350px;width: 350px;border-radius: 400px;margin-left: 10px;">
+        <p>
+            With Medical Scanner Prediction, you can experience the power of cutting-edge technology in medical diagnostics. 
+            
+            Our state-of-the-art algorithms and machine learning models analyze medical scans with precision, providing accurate predictions for various conditions. 
+            Whether you're a healthcare professional or an individual seeking medical insights, our platform is here to assist you.
+       
+           <br> Explore our features, upload your medical scans, and discover the future of medical imaging analysis with Medical Scanner Prediction.</br>
+        </p>
+    </div>
+    <div class="use-case-container">
+        <div class="use-case">
+            <i class="icon fas fa-brain"></i>
+            <h3 class="use-case-title">Brain Scan</h3>
+            <p class="use-case-description">Upload your brain scans for accurate diagnosis and detection of neurological conditions.</p>
+            <p class="use-case-price">Price: 1 credit</p>
+        </div>
+        
+        <div class="use-case">
+            <i class="icon fas fa-lungs"></i>
+            <h3 class="use-case-title">Lung Scan</h3>
+            <p class="use-case-description">Analyze lung scans to identify potential respiratory diseases and conditions.</p>
+            <p class="use-case-price">Price: 1.3 credits</p>
+        </div>
+        
+        <div class="use-case">
+            <i class="icon fas fa-eye"></i>
+            <h3 class="use-case-title">Eye Scan</h3>
+            <p class="use-case-description">Submit eye scans for precise evaluation of ocular health and identification of eye-related issues.</p>
+            <p class="use-case-price">Price: 1 credit</p>
+        </div>
+    </div>
+    
+    <div class="use-case-container2">
+        <div class="use-case">
+            <i class="icon fas fa-bone"></i>
+            <h3 class="use-case-title">Bone Fracture</h3>
+            <p class="use-case-description">Submit bone scans for precise evaluation of bone fractures and identification of bone-related issues.</p>
+            <p class="use-case-price">Price: 1.5 credits</p>
+        </div>
+        
+        <div class="use-case">
+            <i class="icon fas fa-bone"></i>
+            <h3 class="use-case-title">Knee Osteoarthritis</h3>
+            <p class="use-case-description">Submit knee scans for precise evaluation of knee osteoarthritis and identification of knee-related issues.</p>
+            <p class="use-case-price">Price: 1.2 credits</p>
+        </div>
+    </div>
+    <div id="container">
+        <h2>About Us</h2>
+        <p>
+            Medical Scanner Prediction is your trusted diagnostic tool that allows you to upload medical scans and predict various conditions instantly. We utilize advanced machine learning algorithms to provide accurate analysis and detection of neurological, respiratory, ocular, and bone-related conditions.
+        </p>
+        <p>
+            Our platform is designed to provide seamless and efficient medical scan analysis, ensuring timely and accurate diagnosis. We prioritize the security and privacy of your data, and our team of experts is committed to delivering reliable and trustworthy results.
+        </p>
+    </div>
+
+</body>
+</html>
+
+{% endblock %}

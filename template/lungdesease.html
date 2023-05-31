@@ -1,0 +1,44 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+<style>
+    body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+</style>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+                <h2 class="text-center" style="color: {% if predictedLabel == ' the presence of pneumonia in the scanned images. It is recommended to consult with a healthcare professional for further evaluation and treatment.' %}red{% else %}green{% endif %};">
+                    Based on the medical scanner analysis, the results indicate <b>{{ predictedLabel }}</b>
+                </h2>
+                
+                <br>
+                <div class="text-center">
+                    <img src="{{ filePathName }}" alt="imagename" class="result-image img-responsive" style="max-width: 400px; border-radius: 7px;">
+                </div>
+                                
+                <div class="text-center">
+                    <form method="post" enctype="multipart/form-data" action="uploadLung">
+                        {% csrf_token %}
+                        <h3>To Upload another Image Click Here!</h3>
+                        <button type="submit" class="btn btn-primary" style="background-color: #5047cd; color: #fff; border-radius: 10px; font-size: 24px; padding: 12px 30px; border: none; cursor: pointer; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); transition: background-color 0.3s ease;">Upload Lung Scan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .result-image {
+            margin: 0 auto;
+        }
+    </style>
+
+{% endblock %}

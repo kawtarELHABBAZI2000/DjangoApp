@@ -1,0 +1,140 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <br>
+                <h2 class="text-center">Based on the scan you uplaoded, the most suitable model is <b>{{ predictedLabel }}</b>!</h2>
+                <br>
+                <div class="text-center">
+                    <div class="center-image">
+                        <img src="{{ filePathName }}" alt="imagename" class="result-image img-responsive" style="max-width: 300px; border: 1px solid #ccc; padding: 5px;">
+                    </div>    
+                 </div>
+                
+                <div class="use-case-container">
+                <div class="text-center">
+                    {% if predictedLabel == "Bone Fracture !" %}
+                    <div class="use-case">
+                        <h3 class="use-case-title">Bone Fracture</h3>
+                        <p class="use-case-description">Submit bone scans for precise evaluation of bone fractures and identification of bone-related issues.</p>
+                        <button class="upload-button" onclick="window.location.href='uploadBone'">Upload Bone Scan</button>
+                    </div>
+                    {% elif predictedLabel == "Brain Tumor !" %}
+                    <div class="use-case">
+                        <h3 class="use-case-title">Brain Scan</h3>
+                        <p class="use-case-description">Upload your brain scans for accurate diagnosis and detection of neurological conditions.</p>
+                        <button class="upload-button" onclick="window.location.href='uploadBrain'">Upload Brain Scan</button>
+                    </div>
+                    {% elif predictedLabel == "Eye Diseases !" %}
+                    <div class="use-case">
+                        <h3 class="use-case-title">Eye Scan</h3>
+                        <p class="use-case-description">Submit eye scans for precise evaluation of ocular health and identification of eye-related issues.</p>
+                        <button class="upload-button" onclick="window.location.href='uploadEye'">Upload Eye Scan</button>
+                    </div>
+                    {% elif predictedLabel == "Knee Osteoarthritis !" %}
+                    <div class="use-case">
+                        <h3 class="use-case-title">Knee Osteoarthritis</h3>
+                        <p class="use-case-description">Submit knee scans for precise evaluation of knee osteoarthritis and identification of knee-related issues.</p>
+                        <button class="upload-button" onclick="window.location.href='uploadKnee'">Upload Knee Scan</button>
+                    </div>
+                    {% elif predictedLabel == "Lung Diseases !" %}
+                    <div class="use-case">
+                        <h3 class="use-case-title">Lung Scan</h3>
+                        <p class="use-case-description">Analyze lung scans to identify potential respiratory diseases and conditions.</p>
+                        <button class="upload-button" onclick="window.location.href='uploadLung'">Upload Lung Scan</button>
+                    </div>
+                    {% endif %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    body {
+        background-color: #e6eaed;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+                
+    h1 {
+        font-size: 32px;
+        color: #333333;
+        margin-top: 50px;
+    }
+
+    .center-image {
+        display: flex;
+        justify-content: center;
+    }
+        
+    p {
+        font-size: 18px;
+        color: #666666;
+        margin-bottom: 20px;
+    }
+        
+    .button-container {
+        margin-top: 30px;
+    }
+        
+    .upload-button {
+        background-color: #308372;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+        
+    .upload-button:hover {
+        background-color: #45a049;
+    }
+        
+    .use-case-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin: 30px;
+        margin-left: 185px;
+    }
+    
+    .result-image {
+        margin-bottom: 10px;
+    }
+        
+    .use-case {
+        width: 70%;
+        padding: 30px;
+        background-color: #fffafa;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+        
+    .use-case:hover {
+        transform: scale(1.1);
+    }
+        
+    .use-case-title {
+        font-size: 26px;
+        color: #333333;
+        margin-bottom: 10px;
+    }
+
+    .use-case-description {
+        font-size: 18px;
+        color: #7a7676;
+    }
+</style>
+
+
+{% endblock %}

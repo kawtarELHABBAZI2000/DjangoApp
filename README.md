@@ -1,4 +1,4 @@
-# Automated Medical Recognition
+# Automated Medical Recognition Web App
 
 Welcome to the Automated Medical Recognition application, a comprehensive solution designed to assist healthcare professionals in effectively diagnosing certain diseases from medical scanner data.
 
